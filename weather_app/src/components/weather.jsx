@@ -1,10 +1,15 @@
 import React from 'react'
+import './weather.css'
+import search from '../assets/search.png'
 
 const weather = () => {
   return (
-    <div className='app'>
+    <div className='weather'>
+        <div className='search_bar'>
+            <input type="text" placeholder='search'/>
+            <img src={search} alt="" />
+        </div>
     
-    <h1>weather</h1>
     </div>
   )
 }
