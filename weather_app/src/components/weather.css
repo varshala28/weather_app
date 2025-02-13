@@ -1,72 +1,110 @@
-.weather{
+.weather {
     place-self: center;
-    padding:30px;
+    padding: 30px;
     border-radius: 10px;
-    background-image: linear-gradient(45deg,#2f4680,#500ae4);
-    display:flex;
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
-.search_bar{
+.search_bar {
     display: flex;
     align-items: center;
-    gap:12px;
+    gap: 12px;
 }
 
 .search_bar input {
-    height: 44px;
-    border:none;
+    height: 42px;
+    border: none;
     outline: none;
-    border-radius: 35px;
-    padding-left: 25px;
-    color:#626262;
+    border-radius: 34px;
+    padding-left: 27px;
+    color: #626262;
     background: #ebfffc;
+    transition: all 0.3s ease;
 }
 
-.search_bar img{
+.search_bar input:focus {
+    background: #d6f8f1;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.search_bar img {
     width: 44px;
     padding: 12px;
     border-radius: 50%;
     background: #ebfffc;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.weather-icon{
-    width:150px;
-    margin: 30px 0;
+.search_bar img:hover {
+    background: #d6f8f1;
+    transform: scale(1.1);
 }
 
-.temp{
+.weather-icon {
+    width: 150px;
+    margin: 20px 0;
+}
+
+.temp {
     color: #fff;
-    font-size: 75px;
-    line-height: 1;
+    font-size: 60px;
+    line-height: 0.80;
 }
 
-.loc{
-    color:#fff;
-    font-size: 40px;
+.loc {
+    color: #fff;
+    font-size: 37px;
 }
 
-.weather-data{
-    width:100%;
+.weather-data {
+    width: 100%;
     margin-top: 40px;
-    color:#fff;
-    display:flex;
+    color: #fff;
+    display: flex;
     justify-content: space-between;
+    opacity: 0;
+    animation: fadeIn 0.1s ease-out 0.2s forwards; /* Delayed fade-in */
 }
-.weather-data .col{
-    display:flex;
+
+.weather-data .col {
+    display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 6px;
     font-size: 22px;
 }
-.weather-data .col span{
-    display:block;
-    font-size: 16px;
+
+.weather-data .col span {
+    display: block;
+    font-size: 15px;
 }
 
-.weather-data .col img{
-    width:25px;
-    margin-top: 10px;
+.weather-data .col img {
+    width: 24px;
+    margin-top: 12px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
